@@ -141,5 +141,12 @@ class TodoController extends Controller
     public function destroy($id)
     {
         //
+        $todo = Auth::user()->todos->find($id);
+        if($todo){
+            $todo->delete();
+            return response()->json(["status"=>"sucess","error"=>false,"message"=>"Todo deleted Successfully"],201);
+        }else{
+            return response()->json(["status"=>"failed","error"=>true,"message"=>"Todo Not Found"],404);
+        }
     }
 }
