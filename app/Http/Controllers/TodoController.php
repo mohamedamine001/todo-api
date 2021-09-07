@@ -20,7 +20,7 @@ class TodoController extends Controller
     {
         //
         $todos = Auth::user()->todos;
-        return response()-json(["status"=>"success","error"=>false,"count"=>count($todos),"data"=>$todos],200);
+        return response()->json(["status"=>"success","error"=>false,"count"=>count($todos),"data"=>$todos],200);
     }
 
     /**
@@ -52,13 +52,13 @@ class TodoController extends Controller
         }
         try{
             $todo = Todo::create([
-                "title"=>$response->title,
-                "description"=>$response->description,
+                "title"=>$request->title,
+                "description"=>$request->description,
                 "user_id"=>Auth::user()->id
             ]);
             return response()->json(["status"=>"success","error"=>false,"message"=>"Todo Added Sucessfully!"],201);
         }catch(Exception $exception){
-            return response()->json(["status"=>"failed","error"=>$eception->getMessage()],404);
+            return response()->json(["status"=>"failed","error"=>$exception->getMessage()],404);
         }
     }
 
@@ -120,8 +120,8 @@ class TodoController extends Controller
                 $todo['active'] = $request->active;
             }
 
-            if($request->completed){
-                $todo['completed'] = $request->completed;
+            if($request->finished){
+                $todo['finished'] = $request->finished;
             }
 
             $todo->save();

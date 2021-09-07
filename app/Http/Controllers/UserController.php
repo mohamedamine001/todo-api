@@ -27,7 +27,7 @@ class UserController extends Controller
             "password"   => "required|min:5"
          ]);
          if($validator->fails()){
-             return $this->ValidationErrors($validator->errors());
+             return $this->validationErrors($validator->errors());
          }
 
          $user = User::create([
@@ -46,7 +46,7 @@ class UserController extends Controller
      * @return void
      */
     public function login(Request $request){
-        $validator = Validator::make($request->all,[
+        $validator = Validator::make($request->all(),[
             "email" => "required|email",
             "password" => "required|min:5"
         ]);
@@ -61,14 +61,32 @@ class UserController extends Controller
                 return response()->json([
                     "status"  =>"success",
                     "error"   => false,
-                    "message" => "Logged in successfully!"
+                    "message" => "Logged in successfully!",
+                    "token" => $token,
                 ]); 
             }
-            return response()->json(["status"=>"failed","error"=>true,"message"=>"Login failed"],404);
+            return response()->json(["status"=>"failed","message"=>"Login failed"],404);
         }catch(Exception $e){
             return response()->json(["status"=>"failed","message"=>$e->getMessage()],404);
         }
     }
+
+    /**
+     * Logged User Data Using Auth Token
+     *
+     * @return void
+     */
+    public function user(){
+        try{
+            $user = Auth::user();
+            return response()->json(["status"=>"success","error"=>false,"data"=>$user],200);
+        }catch(NotFoundHttpException  $e){
+            return resposne()->json(["status"=>"failed","error"=>$e],401);
+        }
+    }
+
+
+
     /**
     * Logout Auth User
     *
