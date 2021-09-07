@@ -46,7 +46,7 @@ class UserController extends Controller
      * @return void
      */
     public function login(Request $request){
-        $validator = Valiadtor::make($request->all,[
+        $validator = Validator::make($request->all,[
             "email" => "required|email",
             "password" => "required|min:5"
         ]);
