@@ -23,15 +23,27 @@
 
 ### `composer install`
 
-4. Rename `.env.example` to `.env` 
+4. Generate Key
 
-5. edit `.env` file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
+### `php artisan key:generate`
 
-6. Create `todo` Database and then do a database migration using this command : 
+5. Rename `.env.example` to `.env` 
+
+6. edit `.env` file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
+
+7. Create `todo` Database and then do a database migration using this command : 
 
 ### `php artisan migrate`
 
-7. Run server : 
+8. Passport Install
+
+### `php artisan passport:install`
+
+9. Make Auth System
+
+### `php artisan make:auth`
+
+10. Run server : 
 
 ### `php artisan serve`
 
