@@ -136,6 +136,14 @@ class TodoController extends Controller
      *           mediaType="application/json",
      *      )
      *      ),
+     *       @OA\Parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *          type="integer"
+     *       )
+     *      ),
      *      @OA\Response(
      *          response=401,
      *          description="Unauthenticated",
@@ -191,6 +199,14 @@ class TodoController extends Controller
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
+     *      ),
+     *      @OA\Parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *          type="integer"
+     *       )
      *      ),
      *      @OA\Response(
      *          response=200,
@@ -266,6 +282,14 @@ class TodoController extends Controller
      *          @OA\MediaType(
      *           mediaType="application/json",
      *      )
+     *      ),
+     *      @OA\Parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *          type="integer"
+     *       )
      *      ),
      *      @OA\Response(
      *          response=401,

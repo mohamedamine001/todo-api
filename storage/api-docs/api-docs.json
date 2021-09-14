@@ -1,10 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Api covid19 Documentation",
-        "description": "Implementation of Swagger with in Laravel",
+        "title": "Api TODO Documentation",
+        "description": "Todo APP",
         "contact": {
-            "email": "admin@admin.com"
+            "email": "mohamed.amine.aloui@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -15,7 +15,7 @@
     "servers": [
         {
             "url": "http://127.0.0.1:8000/api",
-            "description": "Demo API Server"
+            "description": "API Server"
         }
     ],
     "paths": {
