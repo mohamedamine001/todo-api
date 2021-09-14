@@ -50,6 +50,7 @@
 Then go to `http://127.0.0.1:8000/api/documentation` from your browser and see the api documentation.
 
 ## API EndPoints : 
+![API LINKS](/screenshots/1.png)
 
 ## React project link (Frontend) : 
 
