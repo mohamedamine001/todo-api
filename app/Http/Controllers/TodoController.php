@@ -193,7 +193,7 @@ class TodoController extends Controller
      *      )
      *      ),
      *      @OA\Response(
-     *          response=201,
+     *          response=200,
      *          description="Validation Error",
      *          @OA\MediaType(
      *           mediaType="application/json",
