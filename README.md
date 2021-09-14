@@ -3,7 +3,12 @@
 
 
 ## Laravel TODO Application - API PART
+* Todo API application built with Laravel 8!
 
+## Built With
+* [Laravel 8 ](https://laravel.com/)
+* [Laravel Passport](https://laravel.com/docs/8.x/passport)
+* [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger)
 
 ## Installation
 1. Clone the repository
@@ -14,17 +19,19 @@
 
 ### `cd todo-api`
 
-3.Install project dependencies
+3. Install project dependencies
 
 ### `composer install`
 
-4. edit '.env' file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
+4. Rename `.env.example` to `.env` 
 
-5. Create 'todo' Database and then do a database migration using this command : 
+5. edit '.env' file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
+
+6. Create 'todo' Database and then do a database migration using this command : 
 
 ### `php artisan migrate`
 
-5. Run server : 
+7. Run server : 
 
 ### `php artisan serve`
 
