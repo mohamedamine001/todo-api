@@ -25,9 +25,9 @@
 
 4. Rename `.env.example` to `.env` 
 
-5. edit '.env' file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
+5. edit `.env` file with appropriate credential for your database server. Just edit these two parameter(DB_USERNAME, DB_PASSWORD).   
 
-6. Create 'todo' Database and then do a database migration using this command : 
+6. Create `todo` Database and then do a database migration using this command : 
 
 ### `php artisan migrate`
 
