@@ -73,6 +73,16 @@
                 "summary": "Get Todo by ID",
                 "description": "Returns Todo by its id",
                 "operationId": "getTodoByID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful operation",
@@ -95,6 +105,16 @@
                 "summary": "Update Todo",
                 "description": "Todo Updating",
                 "operationId": "updateTodo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "201": {
                         "description": "Successful operation",
@@ -126,6 +146,16 @@
                 "summary": "Delete Todo",
                 "description": "Delete Todo By ID",
                 "operationId": "deleteTodo",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "201": {
                         "description": "Successful operation",
