@@ -12,10 +12,10 @@ class Controller extends BaseController
    /**
  * @OA\Info(
  *      version="1.0.0",
- *      title="Api covid19 Documentation",
- *      description="Implementation of Swagger with in Laravel",
+ *      title="Api TODO Documentation",
+ *      description="Todo APP",
  *      @OA\Contact(
- *          email="admin@admin.com"
+ *          email="mohamed.amine.aloui@gmail.com"
  *      ),
  *      @OA\License(
  *          name="Apache 2.0",
@@ -25,7 +25,7 @@ class Controller extends BaseController
  *
  * @OA\Server(
  *      url=L5_SWAGGER_CONST_HOST,
- *      description="Demo API Server"
+ *      description="API Server"
  * )
 
  *
