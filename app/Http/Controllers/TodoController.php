@@ -16,6 +16,30 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Get(
+     *      path="/user/todos",
+     *      operationId="getAllTodos",
+     *      tags={"Todo"},
+
+     *      summary="Get List Of Todos",
+     *      description="Returns all todos created by currently authenticated user",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *  )
+     */
+
+
     public function index()
     {
         //
@@ -38,6 +62,35 @@ class TodoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Post(
+     *      path="/user/todos",
+     *      operationId="addingNewTodo",
+     *      tags={"addTodo"},
+
+     *      summary="Adding TODO",
+     *      description="Adding a new Todo",
+     *      @OA\Response(
+     *          response=201,
+     *          description="Todo Added Successfully",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Validation Errors",
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
      */
     public function store(Request $request)
     {
@@ -67,6 +120,31 @@ class TodoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Get(
+     *      path="/user/todos/{id}",
+     *      operationId="getTodoByID",
+     *      tags={"Todo"},
+
+     *      summary="Get Todo by ID",
+     *      description="Returns Todo by its id",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
      */
     public function show($id)
     {
@@ -98,6 +176,42 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Put(
+     *      path="/user/todos/{id}",
+     *      operationId="updateTodo",
+     *      tags={"Todo"},
+
+     *      summary="Update Todo",
+     *      description="Todo Updating",
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Validation Error",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
      */
     public function update(Request $request, $id)
     {
@@ -137,6 +251,31 @@ class TodoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Delete(
+     *      path="/user/todos/{id}",
+     *      operationId="deleteTodo",
+     *      tags={"Todo"},
+
+     *      summary="Delete Todo",
+     *      description="Delete Todo By ID",
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation",
+     *          @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
+     * @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *  )
      */
     public function destroy($id)
     {
