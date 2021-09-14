@@ -49,6 +49,8 @@
 
 Then go to `http://127.0.0.1:8000/api/documentation` from your browser and see the api documentation.
 
+## API EndPoints : 
+
 ## React project link (Frontend) : 
 
 [React Repository](https://github.com/mohamedamine001/todo-front/tree/master).
